@@ -231,6 +231,9 @@ f f f f f . . . . . . . . . . .
 info.onCountdownEnd(function () {
     game.over(false, effects.splatter)
 })
+info.onLifeZero(function () {
+    game.over(false, effects.splatter)
+})
 scene.setBackgroundColor(7)
 tiles.setTilemap(tiles.createTilemap(
             hex`100010000000000000000000000403030305000000040303030500000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000603030307000000010000000100000000000000000000000100000001000b0000000000000000000100000008000a0000000000000000000100000001000000000403030303030307000000010000000001000000000000000000000900000000010000000000000000000001000000000100000000000000000000010000000006030303030303030305000100000000000000000000000000010006030305000000000000000000000100000000060303030303030303030307`,
@@ -276,6 +279,8 @@ let Car_1 = sprites.create(img`
 `, SpriteKind.Player)
 Car_1.setPosition(25, 130)
 pause(100)
+game.splash("You have one minute to finish the course. Good Luck!")
+pause(100)
 game.splash("Ready?")
 pause(100)
 game.splash("3,")
@@ -285,8 +290,9 @@ pause(100)
 game.splash("1,")
 pause(100)
 game.splash("GO!")
-info.startCountdown(40)
 controller.moveSprite(Car_1, 28, 28)
+info.startCountdown(60)
+info.setLife(3)
 forever(function () {
     music.playMelody("C5 G B A F A C5 B ", 200)
     scene.cameraFollowSprite(Car_1)
@@ -294,25 +300,38 @@ forever(function () {
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Left)) {
         Car_1.setPosition(25, 130)
+        info.changeLifeBy(-1)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Top)) {
         Car_1.setPosition(25, 130)
+        info.changeLifeBy(-1)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Right)) {
         Car_1.setPosition(25, 130)
+        info.changeLifeBy(-1)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Bottom)) {
         Car_1.setPosition(25, 130)
+        info.changeLifeBy(-1)
     }
 })
 forever(function () {
     if (Car_1.tileKindAt(TileDirection.Center, myTiles.tile10)) {
         game.over(true, effects.confetti)
+    }
+})
+forever(function () {
+    if (Car_1.tileKindAt(TileDirection.Center, myTiles.tile9)) {
+        info.setScore(1000)
+        for (let index = 0; index < 1000; index++) {
+            pause(100)
+            info.changeScoreBy(-1)
+        }
     }
 })
