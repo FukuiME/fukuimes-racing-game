@@ -170,10 +170,70 @@ f f f f f . . . . . . . . . . .
 . . . f 1 1 1 1 1 1 1 1 f . . . 
 . . . f 1 1 1 1 1 1 1 1 f . . . 
 `
+    //% blockIdentity=images._tile
+    export const tile10 = img`
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+. . . f f f f f f f f f f . . . 
+. . . f 1 f 1 f 1 f 1 f f . . . 
+. . . f f 1 f 1 f 1 f 1 f . . . 
+. . . f f f f f f f f f f . . . 
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 2 2 1 1 1 f . . . 
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+. . . f 1 1 1 1 1 1 1 1 f . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile11 = img`
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile12 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . 1 1 . . . . . . . 
+. . . . . . 1 1 1 1 . . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . 1 1 1 1 1 1 1 1 . . . . 
+. . . 1 1 1 1 1 1 1 1 1 1 . . . 
+. . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+. 1 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 1 1 . . . . . 
+`
 }
+info.onCountdownEnd(function () {
+    game.over(false, effects.splatter)
+})
 scene.setBackgroundColor(7)
 tiles.setTilemap(tiles.createTilemap(
-            hex`1000100000000000000000000004030303050000000403030305000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000006030303070000000100000001000000000000000000000001000000010000000000000000000000010000000100000000000000000000000100000001000000000403030303030307000000010000000001000000000000000000000800000000010000000000000000000001000000000100000000000000000000010000000006030303030303030305000100000000000000000000000000010006030305000000000000000000000100000000060303030303030303030307`,
+            hex`100010000000000000000000000403030305000000040303030500000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000603030307000000010000000100000000000000000000000100000001000b0000000000000000000100000008000a0000000000000000000100000001000000000403030303030307000000010000000001000000000000000000000900000000010000000000000000000001000000000100000000000000000000010000000006030303030303030305000100000000000000000000000000010006030305000000000000000000000100000000060303030303030303030307`,
             img`
 . . . . . . . 2 . . . . . . . . 
 . . . . . . . 2 . . . . . . . . 
@@ -184,7 +244,7 @@ tiles.setTilemap(tiles.createTilemap(
 . . . 2 2 2 2 2 2 2 2 2 . . . . 
 . . . 2 . . . . . . . . . . . . 
 . . . 2 . . . . . . . . . . . . 
-. . . 2 . . . . . . . . . . . . 
+2 2 2 2 . . . . . . . . . . . . 
 . . . 2 . . . . 2 2 2 2 2 2 2 2 
 . . . 2 . . . . . . . . . . . . 
 . . . 2 2 . . . . . . . . . . . 
@@ -192,7 +252,7 @@ tiles.setTilemap(tiles.createTilemap(
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8,myTiles.tile9,myTiles.tile10,myTiles.tile11,myTiles.tile12],
             TileScale.Sixteen
         ))
 scene.centerCameraAt(25, 150)
@@ -214,27 +274,10 @@ let Car_1 = sprites.create(img`
 . . . f f f . . . . f f f f . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-let Car_2 = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . 2 2 2 2 2 2 2 2 . . . . 
-. . . 2 4 2 2 2 2 2 2 c 2 . . . 
-. . 2 c 4 2 2 2 2 2 2 c c 2 . . 
-. 2 c c 4 4 4 4 4 4 2 c c 4 2 d 
-. 2 c 2 e e e e e e e b c 4 2 2 
-. 2 2 e b b e b b b e e b 4 2 2 
-. 2 e b b b e b b b b e 2 2 2 2 
-. e e 2 2 2 e 2 2 2 2 2 e 2 2 2 
-. e e e e e e f e e e f e 2 d d 
-. e e e e e e f e e f e e e 2 d 
-. e e e e e e f f f e e e e e e 
-. e f f f f e e e e f f f e e e 
-. . f f f f f e e f f f f f e . 
-. . . f f f . . . . f f f f . . 
-. . . . . . . . . . . . . . . . 
-`, SpriteKind.Player)
-Car_1.setPosition(25, 180)
-Car_2.setPosition(25, 190)
+Car_1.setPosition(25, 130)
+pause(100)
 game.splash("Ready?")
+pause(100)
 game.splash("3,")
 pause(100)
 game.splash("2,")
@@ -242,28 +285,34 @@ pause(100)
 game.splash("1,")
 pause(100)
 game.splash("GO!")
-controller.moveSprite(Car_1, 30, 30)
+info.startCountdown(40)
+controller.moveSprite(Car_1, 28, 28)
 forever(function () {
     music.playMelody("C5 G B A F A C5 B ", 200)
     scene.cameraFollowSprite(Car_1)
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Left)) {
-        Car_1.setPosition(25, 180)
+        Car_1.setPosition(25, 130)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Top)) {
-        Car_1.setPosition(25, 180)
+        Car_1.setPosition(25, 130)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Right)) {
-        Car_1.setPosition(25, 180)
+        Car_1.setPosition(25, 130)
     }
 })
 forever(function () {
     if (Car_1.isHittingTile(CollisionDirection.Bottom)) {
-        Car_1.setPosition(25, 180)
+        Car_1.setPosition(25, 130)
+    }
+})
+forever(function () {
+    if (Car_1.tileKindAt(TileDirection.Center, myTiles.tile10)) {
+        game.over(true, effects.confetti)
     }
 })
