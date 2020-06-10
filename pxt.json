@@ -1,7 +1,9 @@
 {
     "name": "FukuiME's Racing Game",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "controller": "*",
+        "keyboard": "*"
     },
     "description": "",
     "files": [
